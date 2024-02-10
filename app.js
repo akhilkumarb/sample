@@ -86,7 +86,7 @@ app.get("/login",(request,response)=>{
 
 })
 
-//runs during submission of login button
+//runs during submission of login button.
 app.post("/login", passport.authenticate('local',{failureRedirect:"/login"}),(request,response)=>{
   console.log(request.user.email);
   if(request.user.email==="admin@gmail.com"){
