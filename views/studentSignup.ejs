@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title><%= title %></title>
+  <!-- Boxicons CSS -->
+  <link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
+  <link rel="stylesheet" href="/css/studentSignup.css">
+</head>
+
+<body>
+  <div class="container">
+    <div class="form">
+      <header>Signup</header>
+      <form method="POST" action="/signUp">
+        <input type="hidden" name="_csrf" value="<%= csrfToken %>">
+        <div class="field">
+          <input type="text" placeholder="Full Name" name="name" class="input">
+        </div>
+        <div class="field">
+          <input type="email" placeholder="Email" name="email" class="input">
+        </div>
+        <div class="field">
+          <input type="password" placeholder="Password" name="password" class="password">
+          <i class='bx bx-hide eye-icon'></i>
+        </div>
+        <div class="field">
+          <input type="password" placeholder="Confirm password" name="confirmPassword" class="password">
+          <i class='bx bx-hide eye-icon'></i>
+        </div>
+        <div class="field button-field">
+          <button>Signup</button>
+        </div>
+      </form>
+
+      <div class="form-link">
+        <span>Already have an account? <a href="/login" class="link">Login</a></span>
+      </div>
+    </div>
+
+    <div class="line"></div>
+
+    <div class="media-options">
+      <a href="#" class="google">
+        <img src="../images/search.png" alt="" class="google-img">
+        <i class="fa fa-google fa-fw"></i>
+      </a>
+    </div>
+  </div>
+  <!-- JavaScript -->
+  <script src="js/script.js"></script>
+</body>
+
+</html>

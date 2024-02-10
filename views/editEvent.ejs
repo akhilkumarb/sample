@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>ADD A COURSE</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;600;700&display=swap" rel="stylesheet">
+  <script src="https://kit.fontawesome.com/9d595d1bf3.js" crossorigin="anonymous"></script>
+  
+  <link rel="stylesheet" href="/css/editEvents.css">
+</head>
+
+<body>
+   
+    <section class="section-course" aria-label="recent post">
+      <div class="container">
+          <div class="title-wrapper">
+              <h2 class="section-title">
+                  <strong class="strong">Add Event </strong>
+              </h2>
+          </div>
+          
+          <form action="/editevent" method="POST" class="event-form">
+              <input type="hidden" name="_csrf" value="<%= csrfToken %>">
+              <input type="hidden" name="eventId" value="<%= eventId%>">
+              <div class="form-group">
+                  <label for="eventImg">Event Image URL</label>
+                  <input type="text" name="eventImg" value="" placeholder="Event Image URL" required>
+              </div>
+  
+              <div class="form-group">
+                  <label for="eventTitle">Event Title</label>
+                  <input type="text" name="eventTitle" value="" placeholder="Event Title" required>
+              </div>
+  
+              <div class="form-group">
+                  <label for="content">Event Description</label>
+                  <textarea name="content" placeholder="Event Description" minlength="10" required></textarea>
+              </div>
+  
+              <div class="form-group">
+                  <label for="eventLocation">Event Venue</label>
+                  <input type="text" name="eventLocation" placeholder="Event Venue" required>
+              </div>
+  
+              <div class="form-group">
+                  <label for="eventMembers">Event Capacity</label>
+                  <input type="text" name="eventMembers" placeholder="Event Capacity" required>
+              </div>
+  
+              <div class="form-group">
+                  <label for="eventStartDate">Event Start Date</label>
+                  <input type="date" name="eventStartDate" placeholder="Event Start Date" required>
+              </div>
+  
+              <div class="form-group">
+                  <label for="eventTime">Event Time</label>
+                  <input type="time" name="eventTime" placeholder="Event Time" required>
+              </div>
+  
+              <div class="form-group">
+                  <label for="eventEndDate">Event End Date</label>
+                  <input type="date" name="eventEndDate" required>
+              </div>
+  <br><br>
+              <div class="form-group">
+                  <input type="submit" value="Edit Event">
+              </div>
+          </form>
+      </div> 
+    <div class="back-button">
+        <a href="/AllEvents">Back</a> <!-- Add the actual link to navigate back -->
+    </div>
+</body>
+
+</html>

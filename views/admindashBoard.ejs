@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<!-- Created By CodingNepal - www.codingnepalweb.com -->
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Dashboard</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <link rel="stylesheet" href="/css/dashBoard.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+    <script src="https://kit.fontawesome.com/9d595d1bf3.js" crossorigin="anonymous"></script>
+  </head>
+  <body>
+    <nav>
+      <label class="logo">SportScheduler</label>
+      <li class="link"><a class="anc" href="admindashBoard">Home</a></li>
+      <li class="link"><a class="anc" href="AllEvents">Events</a></li>
+      <li class="link"><a class="anc" href="addEvent">Add Event</a></li>
+      <li class="link"><a class="anc" href="#">Feedback</a></li>
+      <li class="link"><a class="anc" href="#">About</a></li>
+      <li class="profile">
+        <i class="fa-regular fa-user"></i>
+      </li>
+    </nav>
+    <div class="body-imgs"></div>
+    <div class="dashboard-container">
+        <section class="upcoming-events">
+          <h2>upcoming Events</h2>
+          <ul class="event-list">
+            <li class="event-item">
+              <img src="/images/img1.jpeg" alt="Event Image" class="event-image">
+              <h3 class="event-title">Football Match</h3>
+              <p class="event-date">Date: January 30, 2024</p>
+            </li>
+            <li class="event-item">
+              <img src="/images/img2.jpeg" alt="Event Image" class="event-image">
+              <h3 class="event-title">Basketball Tournament</h3>
+              <p class="event-date">Date: February 5, 2024</p>
+            </li>
+          </ul>
+        </section>
+
+        <br><br><br>
+        <section class="upcoming-events">
+          <h2>Live Events</h2>
+          <ul class="event-list">
+            <% FormattedEventData.forEach(event => { %>
+                <li class="event-item">
+                  <a href="/viewEvent?eventId=<%= encodeURIComponent(event.id)%>"> <img src="<%= event.eventImg %>" alt="Event Image" class="event-image"></a>
+                    <h2 class="event-title"><%= event.eventTitle %></h2>
+                </li>
+            <% }); %>
+        </ul>
+          </ul>
+        </section>
+      </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+          const currentPage = window.location.href;
+    
+          const links = document.querySelectorAll('.anc');
+    
+          links.forEach(link => {
+            const linkHref = link.getAttribute('href');
+            if (currentPage.includes(linkHref)) {
+              link.classList.add('active');
+            }
+          });
+        });
+      </script>
+  </body>
+  

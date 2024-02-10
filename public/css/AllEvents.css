@@ -1,0 +1,124 @@
+*{
+    padding: 0;
+    margin: 0;
+    
+  text-decoration: none;
+  list-style: none;
+  box-sizing: border-box;
+  }
+  nav {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    background: #d0e4f4;
+    height: 100vh;
+    width: 20%;
+    position:fixed;
+    padding: 3vh;
+    left: 0;
+    top: 0;
+    width: 250px;
+    overflow-y: auto;
+  }
+  nav ul {
+    width: 100%;
+    padding-top: 20px;
+  }
+  .link {
+    margin: 5px 0;
+  }
+  .fa-user{
+    font-size: 2em;
+    color: rgb(8, 0, 0);
+  }
+  .profile {
+    cursor: pointer;
+    background-color: rgba(255, 255, 255, 0.3);
+    border-radius: 10px;
+    margin-top: 10px;
+    padding: 10px;
+    
+    display: inline-block;
+  }
+  
+  .anc{
+    color: rgb(8, 0, 0);
+    font-size: 24px;
+    border-radius: 3px;
+    text-transform: uppercase;
+  }
+  .anc.active,.anc:hover{
+    box-shadow: #354737;
+    background: #35ed48;
+    transition: .2s;
+  }
+  label.logo{
+    font-size: 2em;
+    color: rgb(6, 134, 247);
+  }
+  /* Event Section Styles */
+.event-section {
+  padding-left: 20%;
+  background-color: #f4f4f4;
+  text-align: center;
+}
+
+.title-name {
+  font-size: 36px;
+  color: #333;
+  margin-bottom: 30px;
+}
+
+.event-list {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.event-item {
+  margin: 20px;
+  padding: 20px;
+  width: 28%;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease-in-out;
+}
+
+.event-item:hover {
+  transform: scale(1.05);
+}
+
+.event-image {
+  width: 90%;
+  height: 90%;
+  max-height: 200px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 10px;
+}
+
+.event-title {
+  font-size: 24px;
+  color: #555;
+  margin-bottom: 10px;
+}
+
+.add-topic {
+  background-color: #3498db;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.add-topic:hover {
+  background-color: #2980b9;
+}
+
+
+

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Events</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/AllEvents.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+    <script src="https://kit.fontawesome.com/9d595d1bf3.js" crossorigin="anonymous"></script>
+  </head>
+  <body>
+    <nav>
+      <label class="logo">SportScheduler</label>
+        <li class="link"><a class="anc" href="admindashBoard">Home</a></li>
+        <li class="link"><a class="anc" href="AllEvents">Events</a></li>
+        <li class="link"><a class="anc" href="addEvent">Add Event</a></li>
+        <li class="link"><a class="anc" href="#">Feedback</a></li>
+        <li class="link"><a class="anc"  href="#">About</a></li>
+        <li class="profile">
+        <i class="fa-regular fa-user"></i>
+    </nav>
+   <section class="event-section">
+    <h1 class="title-name">All Events</h1>
+    <ul class="event-list">
+        <% FormattedEventData.forEach(event => { %>
+            <li class="event-item">
+                <img src="<%= event.eventImg %>" alt="Event Image" class="event-image">
+                <h2 class="event-title"><%= event.eventTitle %></h2>
+                <a href="/viewEvent?eventId=<%= encodeURIComponent(event.id)%>"><button class="add-topic">View Event</button></a>
+                <a href="/deleteEvent?eventId=<%= encodeURIComponent(event.id)%>"><button class="add-topic">Delete Event</button></a>
+                <a href="/trackEvent?eventId=<%= encodeURIComponent(event.id)%>"><button class="add-topic">Registrations</button></a>
+                <a href="/editEvent?eventId=<%= encodeURIComponent(event.id)%>"><button class="add-topic">Edit</button></a>
+
+        </div>
+
+            </li>
+        <% }); %>
+    </ul>
+</section>
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const currentPage = window.location.href;
+
+    const links = document.querySelectorAll('.anc');
+
+    links.forEach(link => {
+      const linkHref = link.getAttribute('href');
+      if (currentPage.includes(linkHref)) {
+        link.classList.add('active');
+      }
+    });
+  });
+</script>
+
+  </body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Details</title>
+    <link rel="stylesheet" href="/css/viewEvent.css">
+    <script src="/js/viewEevent.js"></script>
+</head>
+
+<body>
+
+    <div class="container">
+
+        <h1>Event Details</h1>
+
+        <div class="event-details">
+            <div>
+                <h2><%= eventCont.Title %></h2>
+                <!-- Replace 'event-title.jpg' with the actual image source -->
+                <img src="<%= eventCont.eventImg %>" alt="">
+            </div>
+
+            <div>
+                <h2>Description</h2>
+                <p><%= eventCont.eventDesc %></p>
+
+                <h2>Venue</h2>
+                <p><%= eventCont.eventVenue %></p>
+
+                <h2>Date and Time</h2>
+                <p>Start Date: <%= eventCont.eventStartDate %><br>
+                    End Date: <%= eventCont.eventEndDate %><br>
+                    Time: <%= eventCont.eventTime %></p>
+            </div>
+
+        </div>
+        <div class="back-button">
+            <a href="/allEvents">Back</a> <!-- Add the actual link to navigate back -->
+        </div>
+        
+    </div>
+
+</body>
+
+</html>

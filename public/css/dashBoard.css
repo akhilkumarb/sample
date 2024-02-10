@@ -1,0 +1,123 @@
+*{
+  padding: 0;
+  margin: 0;
+  text-decoration: none;
+  list-style: none;
+  box-sizing: border-box;
+}
+body {
+  font-family: montserrat;
+  overflow: hidden;
+  display: flex;
+  flex-direction: row;
+}
+
+nav {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  background: #d0e4f4;
+  height: 100vh;
+  position: fixed;
+  padding: 3vh;
+  left: 0;
+  top: 0;
+  width: 250px;
+  overflow-y: auto;
+}
+
+nav ul {
+  width: 100%;
+  padding-top: 20px;
+}
+
+.link {
+  margin: 5px 0;
+}
+
+.fa-user {
+  font-size: 2em;
+  color: rgb(8, 0, 0);
+}
+
+.profile {
+  cursor: pointer;
+  background-color: rgba(255, 255, 255, 0.3);
+  border-radius: 10px;
+  margin-top: 10px;
+  padding: 10px;
+  display: inline-block;
+}
+
+.anc {
+  color: rgb(8, 0, 0);
+  font-size: 24px;
+  border-radius: 3px;
+  text-transform: uppercase;
+}
+
+.anc.active,
+.anc:hover {
+  box-shadow: #354737;
+  background: #35ed48;
+  transition: 0.2s;
+}
+
+label.logo {
+  font-size: 2em;
+  color: rgb(6, 134, 247);
+}
+
+.body-imgs {
+  background-image: url('/images/img2.jpeg');
+  /* Replace with the actual path to your background image */
+  height: fit-content;
+  width: fit-content;
+  position: relative;
+}
+
+/* dashboard */
+
+.dashboard-container {
+  margin-left: 250px; /* Adjust based on your nav width */
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+.upcoming-events {
+  background: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.event-list {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.event-item {
+  width: 200px;
+  margin: 10px;
+}
+
+.event-image {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.event-title {
+  font-size: 16px;
+  margin-top: 10px;
+}
+
+.event-date {
+  font-size: 14px;
+  color: #888;
+  margin-top: 5px;
+}
